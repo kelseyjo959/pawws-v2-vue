@@ -22,7 +22,7 @@ export default new Router({
     {
       path: '/pets',
       name: 'pets',
-      component: () => import('./views/Pets.vue')
+      component: () => import('./views/PetKennel.vue')
     },
     {
       path: '/counter',

@@ -1,20 +1,25 @@
 <template>
-  <div class="pets">
+  <div class="pet-kennel">
     <h1>This the pets page</h1>
     <button v-on:click="getPets">Click for pets</button>
-    <ul id="pet-list">
-  <li v-for="pet in pets" :key="pet.name">
-    {{ pet.name }}
-  </li>
-</ul>
+    <!-- <ul id="pet-list">
+      <li v-for="pet in pets" :key="pet.name">
+        {{ pet.name }}
+      </li>
+    </ul> -->
+    <PetDetails v-for="pet in pets" :key="pet.name" :pet="pet" />
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import PetDetails from '../components/PetDetails.vue'
 
 export default {
   name: 'pet-kennel',
+  components: {
+    PetDetails
+  },
   data () {
     return {
       pets: []

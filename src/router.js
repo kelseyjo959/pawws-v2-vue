@@ -23,6 +23,11 @@ export default new Router({
       path: '/pets',
       name: 'pets',
       component: () => import('./views/Pets.vue')
+    },
+    {
+      path: '/counter',
+      name: 'counter',
+      component: () => import('./views/Counter.vue')
     }
   ]
 })

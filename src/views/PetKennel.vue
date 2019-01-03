@@ -14,7 +14,7 @@
 import axios from 'axios';
 
 export default {
-  name: 'pets',
+  name: 'petKennel',
   data () {
     return {
       pets: []

@@ -21,7 +21,7 @@ export default new Router({
     },
     {
       path: '/pets',
-      name: 'petKennel',
+      name: 'pet-kennel',
       component: () => import('./views/PetKennel.vue')
     },
     {

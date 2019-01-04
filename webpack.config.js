@@ -1,6 +1,5 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     mode: 'development',
@@ -8,16 +7,9 @@ module.exports = {
     output: {
       path: __dirname + '/src',
       publicPath: '/',
-      filename: 'bundle.js'
+      filename: 'bundle.js',
     },
-    // externals: [nodeExternals()],
     devtool: 'inline-cheap-module-source-map',
-    output: {
-      // ...
-      // use absolute paths in sourcemaps (important for debugging via IDE)
-      devtoolModuleFilenameTemplate: '[absolute-resource-path]',
-      devtoolFallbackModuleFilenameTemplate: '[absolute-resource-path]?[hash]'
-    },
     module: {
         rules: [
             {

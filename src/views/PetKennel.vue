@@ -33,6 +33,7 @@ export default {
           this.pets = response.data;
         }, 
         (error) => {
+          // eslint-disable-next-line
           console.log(error);
         })
     }

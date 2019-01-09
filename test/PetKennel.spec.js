@@ -6,28 +6,20 @@ import PetKennel from '../src/views/PetKennel.vue'
 
 
 describe('PetKennel.vue', () => {
-  let wrapper
-
-beforeEach(() => {
-  wrapper = shallowMount(PetKennel, {
-    data: function() {
-      return {
-        pets: []
-      }
-    }
-  })
-})
-
-afterEach(() => {
-  wrapper.destroy()
-})
-
 
   it('checks if the main div has the className pet-kennel', () => {
+    const wrapper = shallowMount(PetKennel)
     expect(wrapper.is('.pet-kennel')).to.equal(true)
   })
 
   it('performs an axios GET request upon button click', (done) => {
+    const wrapper = mount(PetKennel, {
+      data: function() {
+        return {
+          pets: []
+        }
+      }
+    })
     const res = {
       data: [
         { name: 'floppy' },

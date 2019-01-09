@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     getPets: function () {
-      axios.get('http://localhost:3000/getPets', {
+      return axios.get('http://localhost:3000/getPets', {
         headers: {
           "screenSize": window.width,
           "shelter": "",
@@ -30,7 +30,7 @@ export default {
         }
       })
         .then((response) => {
-          this.pets = response.data;
+          return this.pets = response.data;
         }, 
         (error) => {
           // eslint-disable-next-line

@@ -22,6 +22,7 @@ export default {
   },
   methods: {
     getPets: function () {
+      console.log('I was clicked')
       return axios.get('http://localhost:3000/getPets', {
         headers: {
           "screenSize": window.width,
@@ -31,11 +32,11 @@ export default {
       })
         .then((response) => {
           this.pets = response.data;
-        }, 
-        (error) => {
-          // eslint-disable-next-line
-          console.log(error);
-        })
+        }) 
+        // (error) => {
+        //   // eslint-disable-next-line
+        //   console.log(error);
+        // })
     }
   }
 }

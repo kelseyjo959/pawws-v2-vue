@@ -12,28 +12,33 @@ describe('PetKennel.vue', () => {
     expect(wrapper.is('.pet-kennel')).to.equal(true)
   })
 
-  it('performs an axios GET request upon button click', (done) => {
-    const wrapper = mount(PetKennel, {
-      data: function() {
-        return {
-          pets: []
-        }
-      }
-    })
-    const res = {
-      data: [
-        { name: 'floppy' },
-        { name: 'soppy' }
-      ]
-    }
-    wrapper.find('button').trigger('click')
-    wrapper.vm.getPets().then( () => {
-      sinon.stub(axios, 'get').returns(Promise.resolve(res))
-      expect(wrapper.vm.pets).to.equal( [{name: 'floppy'}, {name: 'soppy'}] )
-      done()
+  // it('updates the data() after axios GET performed', () => {
+  //   const wrapper = mount(PetKennel, {
+  //     data: function() {
+  //       return {
+  //         pets: []
+  //       }
+  //     }
+  //   })
+    
+  //   wrapper.find('button').trigger('click')
+    // const res = {
+    //   data: [
+    //     { name: "floppy" },
+    //     { name: "soppy" }
+    //   ]
+    // }
+   
+      // console.log(wrapper.vm.pets)
+      // sinon.stub(axios, 'get').returns(Promise.resolve(res))
+      // // wrapper.setData({pets: res.data})
+      // done()
+      // console.log(wrapper.vm.pets)
+      // expect(wrapper.vm.pets).to.eql( res.data )
 
-    })
-    done()
+    // })
+    // done()
+    // expect(wrapper.vm.pets).to.equal([])
 
-  })
+  // })
 })

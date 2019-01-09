@@ -1,7 +1,7 @@
 import { shallowMount, mount } from '@vue/test-utils'
 import { expect } from 'chai'
-import { sinon } from 'sinon'
-import { axios } from 'axios'
+import * as sinon from 'sinon'
+import * as axios from 'axios'
 import PetKennel from '../src/views/PetKennel.vue'
 
 
@@ -27,8 +27,12 @@ describe('PetKennel.vue', () => {
       ]
     }
     wrapper.find('button').trigger('click')
-    sinon.stub(axios, 'get').returns(Promise.resolve(res))
-    expect(wrapper.setData).to.have.been.called()
+    wrapper.vm.getPets().then( () => {
+      sinon.stub(axios, 'get').returns(Promise.resolve(res))
+      expect(wrapper.vm.pets).to.equal( [{name: 'floppy'}, {name: 'soppy'}] )
+      done()
+
+    })
     done()
 
   })

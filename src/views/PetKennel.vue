@@ -23,20 +23,21 @@ export default {
   methods: {
     getPets: function () {
       console.log("I was clicked")
-      // return axios.get('http://localhost:3000/getPets', {
-      //   headers: {
-      //     "screenSize": window.width,
-      //     "shelter": "",
-      //     "count": 0,
-      //   }
-      // })
-      //   .then((response) => {
-      //     return this.pets = response.data;
-      //   }, 
-      //   (error) => {
-      //     // eslint-disable-next-line
-      //     console.log(error);
-      //   })
+      return axios.get('http://localhost:3000/getPets', {
+        headers: {
+          "screenSize": window.width,
+          "shelter": "",
+          "count": 0,
+        }
+      })
+        .then((response) => {
+          console.log("axios completed")
+          this.pets = response.data;
+        }, 
+        (error) => {
+          // eslint-disable-next-line
+          console.log(error);
+        })
     }
   }
 }

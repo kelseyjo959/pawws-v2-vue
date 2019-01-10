@@ -1,6 +1,7 @@
 <template>
   <div class="pet-kennel">
     <h1>This the pets page</h1>
+    <md-button class="md-dense">New Button</md-button>
     <button v-on:click="getPets">Click for pets</button>
     <PetDetails v-for="pet in pets" :key="pet.name" :pet="pet" />
   </div>
@@ -13,7 +14,7 @@ import PetDetails from '../components/PetDetails.vue'
 export default {
   name: 'pet-kennel',
   components: {
-    PetDetails
+    PetDetails,
   },
   data () {
     return {
